@@ -15,6 +15,8 @@ export default LiquidWormhole.extend({
   targetModifier: null,
   constraints: null,
   optimizations: null,
+  copyTargetWidth: null,
+  copyTargetHeight: null,
 
   didInsertElement() {
     this._super.apply(this, arguments);
@@ -60,7 +62,9 @@ export default LiquidWormhole.extend({
       'targetOffset',
       'targetModifier',
       'constraints',
-      'optimizations'
+      'optimizations',
+      'copyTargetWidth',
+      'copyTargetHeight'
     ].forEach((k) => {
       const v = get(this, k);
       if (!Ember.isNone(v)) {
